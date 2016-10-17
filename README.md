@@ -1,9 +1,7 @@
 # Brute #
 
-a lil brute force wrote in simple c
+a lil brute force in simple C
 
 ### TODO: ###
 
-* split
-* Makefile
 * thread?

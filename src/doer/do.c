@@ -6,7 +6,7 @@
 /*   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 20:37:58 by mcanal            #+#    #+#             */
-/*   Updated: 2016/10/17 21:19:38 by mcanal           ###   ########.fr       */
+/*   Updated: 2016/10/17 21:31:57 by mcanal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ static void exec_with_arg()
         perror("fork");
         exit(EXIT_FAILURE);
     }
-	else if (!zboub)
-	{
+    else if (!zboub)
+    {
         execve(*g_exec, g_exec, environ);
         perror("execve");
         exit(EXIT_FAILURE);
-	}
-	else
-		wait(NULL);
+    }
+    else
+        wait(NULL);
 }
 
 static int  carry_on(char carry_char, char *print_swap)

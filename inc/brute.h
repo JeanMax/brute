@@ -6,7 +6,7 @@
 /*   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 19:55:44 by mcanal            #+#    #+#             */
-/*   Updated: 2016/10/17 20:39:29 by mcanal           ###   ########.fr       */
+/*   Updated: 2016/10/17 21:31:57 by mcanal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,21 +54,21 @@
 /*
 ** enum
 */
-enum					e_error
+enum                    e_error
 {
-	E_NOERROR = 0,
-	E_NOEXIT = (1 << 0),
-	E_CMDNOTFOUND = (1 << 1),
-	E_NOSUCHFILE = (1 << 2),
-	E_OPEN = (1 << 3),
-	E_PIPE = (1 << 4),
-	E_FORK = (1 << 5),
-	E_ARG = (1 << 6),
-	E_PATH = (1 << 7),
-	E_TTY = (1 << 8),
-	E_GETATTR = (1 << 9),
-	E_SETATTR = (1 << 10),
-	E_TERM = (1 << 11)
+    E_NOERROR = 0,
+    E_NOEXIT = (1 << 0),
+    E_CMDNOTFOUND = (1 << 1),
+    E_NOSUCHFILE = (1 << 2),
+    E_OPEN = (1 << 3),
+    E_PIPE = (1 << 4),
+    E_FORK = (1 << 5),
+    E_ARG = (1 << 6),
+    E_PATH = (1 << 7),
+    E_TTY = (1 << 8),
+    E_GETATTR = (1 << 9),
+    E_SETATTR = (1 << 10),
+    E_TERM = (1 << 11)
 };
 
 /*

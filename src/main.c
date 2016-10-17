@@ -6,7 +6,7 @@
 /*   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 20:13:53 by mcanal            #+#    #+#             */
-/*   Updated: 2016/10/17 21:18:45 by mcanal           ###   ########.fr       */
+/*   Updated: 2016/10/17 21:31:57 by mcanal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void usage_error()
 {
     printf("Usage: %s [OPTIONS] [COMMAND]\n", *g_av);
     /* printf(" --help: this help message\n"); */
-	/* printf(" --echo,       -e: echo brute-words\n"); */
+    /* printf(" --echo,       -e: echo brute-words\n"); */
     printf(" --min LENGTH, -m LENGTH: minimum length of output (default: %d)\n", MIN_LENGTH);
     printf(" --max LENGTH, -M LENGTH: maximum length of output (default: %d)\n", MAX_LENGTH);
     /* printf("\nCharacters list(s) used for brute-forcing: (default: -P)\n"); */
@@ -45,5 +45,5 @@ int main(int ac, char **av)
     parse(ac, av + 1);
     brute_loop();
 
-	return (EXIT_SUCCESS);
+    return (EXIT_SUCCESS);
 }

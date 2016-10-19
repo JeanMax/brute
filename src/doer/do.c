@@ -6,7 +6,7 @@
 /*   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 20:37:58 by mcanal            #+#    #+#             */
-/*   Updated: 2016/10/17 21:31:57 by mcanal           ###   ########.fr       */
+/*   Updated: 2016/10/19 22:30:39 by mcanal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 extern char **environ;
 
-extern char **g_av;
-
-extern char  *g_print_buf;
-extern char  *g_brute_char_list;
-extern char **g_exec;
-extern int    g_min;
-extern int    g_max;
+extern enum e_brute_flag g_flag;
+extern char             *g_print_buf;
+extern char             *g_brute_char_list;
+extern char            **g_exec;
+extern int               g_min;
+extern int               g_max;
 
 static void exec_with_arg()
 {
@@ -31,9 +30,11 @@ static void exec_with_arg()
     print_swap = g_print_buf;
     while (!*print_swap && print_swap - g_print_buf < g_max)
         print_swap++;
-    printf("<%s>\n", print_swap); /* DEBUG */
+    if (g_flag & E_ECHO)
+        printf("%s\n", print_swap);
 
-    exec_swap = g_exec;
+    if (!(exec_swap = g_exec))
+        return;
     while (*exec_swap)
         exec_swap++;
     *(exec_swap - 1) = print_swap;

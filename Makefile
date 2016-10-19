@@ -6,7 +6,7 @@
 #    By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/29 13:16:03 by mcanal            #+#    #+#              #
-#    Updated: 2016/10/17 20:33:50 by mcanal           ###   ########.fr        #
+#    Updated: 2016/10/17 22:06:38 by mcanal           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,7 +14,7 @@ NAME =	brute
 
 C_SRC =	main.c
 C_DOER = do.c
-C_PARSER = parse.c
+C_PARSER = parse.c parse_flags.c
 
 O_DIR = obj
 C_DIR = src

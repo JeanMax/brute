@@ -6,7 +6,7 @@
 /*   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 19:55:44 by mcanal            #+#    #+#             */
-/*   Updated: 2016/10/17 20:34:51 by mcanal           ###   ########.fr       */
+/*   Updated: 2016/10/17 22:21:00 by mcanal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 /*
 ** include
 */
-#include "brute.h"
+# include "brute.h"
+# include <unistd.h>
+# include <sys/types.h>
+# include <sys/wait.h>
 
 #endif

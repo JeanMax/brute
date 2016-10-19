@@ -6,7 +6,7 @@
 /*   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 19:55:44 by mcanal            #+#    #+#             */
-/*   Updated: 2016/10/17 21:31:57 by mcanal           ###   ########.fr       */
+/*   Updated: 2016/10/19 22:04:01 by mcanal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,70 +17,42 @@
 */
 # define BRUTE_H
 
-#  define DIGITS       "0123456789"
-#  define LOWERCASE    "abcdefghijklmnopqrstuvwxyz"
-#  define UPPERCASE    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-#  define LETTERS      LOWERCASE UPPERCASE
-#  define PUNCTUATION  "!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~"
-/* #  define PUNCTUATION  "!#$%&()*+,-./:;<=>?@[\\]^_{|}~" */ //without quotes
-#  define LOWERHEXA    DIGITS "abcdef"
-#  define UPPERHEXA    DIGITS "ABCDEF"
-#  define HEXDIGITS    DIGITS "abcdef" "ABCDEF"
-#  define OCTDIGITS    "01234567"
-#  define WHITESPACES  " \t\n\r\x0b\x0c"
-#  define PRINTABLE    DIGITS LETTERS PUNCTUATION WHITESPACES
-
-#  define FAKE_WHITESPACES  " \\t\\n\\v\\f\\r"
-#  define FAKE_PRINTABLE    DIGITS LETTERS PUNCTUATION FAKE_WHITESPACES
-
-#  define TRUE  1
-#  define FALSE 0
-
-#define MIN_LENGTH 1
-#define MAX_LENGTH 42
+# define TRUE  1
+# define FALSE 0
 
 /*
 ** include
 */
-#include <strings.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
+# include <stdlib.h> //BASE only
+# include <stdio.h>
+# include <string.h>
 
 
 /*
 ** enum
 */
-enum                    e_error
+enum                    e_brute_flag
 {
-    E_NOERROR = 0,
-    E_NOEXIT = (1 << 0),
-    E_CMDNOTFOUND = (1 << 1),
-    E_NOSUCHFILE = (1 << 2),
-    E_OPEN = (1 << 3),
-    E_PIPE = (1 << 4),
-    E_FORK = (1 << 5),
-    E_ARG = (1 << 6),
-    E_PATH = (1 << 7),
-    E_TTY = (1 << 8),
-    E_GETATTR = (1 << 9),
-    E_SETATTR = (1 << 10),
-    E_TERM = (1 << 11)
+    E_NOFLAG = 0,
+    E_DIGITS = (1 << 0),
+    E_LOWERCASE = (1 << 1),
+    E_UPPERCASE = (1 << 2),
+    E_LETTERS = (1 << 3),
+    E_PUNCTUATION = (1 << 4),
+    E_LOWERHEXA = (1 << 5),
+    E_UPPERHEXA = (1 << 6),
+    E_HEXDIGITS = (1 << 7),
+    E_OCTDIGITS = (1 << 8),
+    E_WHITESPACES = (1 << 9),
+    E_PRINTABLE = (1 << 10),
+    E_ECHO = (1 << 11)
 };
-
-/*
-** BASE
-** main.c
-*/
-void usage_error();
 
 /*
 ** PARSER
 ** parse.c
 */
+void usage_error();
 void parse(int ac, char **av);
 
 /*

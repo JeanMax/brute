@@ -6,7 +6,7 @@
 /*   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 20:37:58 by mcanal            #+#    #+#             */
-/*   Updated: 2016/10/19 22:30:39 by mcanal           ###   ########.fr       */
+/*   Updated: 2016/10/19 22:36:49 by mcanal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ extern char            **g_exec;
 extern int               g_min;
 extern int               g_max;
 
-static void exec_with_arg()
+static void exec_with_arg(void)
 {
     char *print_swap;
     char **exec_swap;
@@ -71,7 +71,7 @@ static int  carry_on(char carry_char, char *print_swap)
     return (TRUE);
 }
 
-void brute_loop()
+void brute_loop(void)
 {
     char *print_swap;
     char *brute_swap;

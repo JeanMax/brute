@@ -6,7 +6,7 @@
 /*   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 19:55:44 by mcanal            #+#    #+#             */
-/*   Updated: 2016/10/19 22:04:01 by mcanal           ###   ########.fr       */
+/*   Updated: 2016/10/19 22:36:20 by mcanal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ enum                    e_brute_flag
 ** PARSER
 ** parse.c
 */
-void usage_error();
+void usage_error(void);
 void parse(int ac, char **av);
 
 /*
 ** DOER
 ** do.c
 */
-void brute_loop();
+void brute_loop(void);
 
 #endif

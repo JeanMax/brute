@@ -6,7 +6,7 @@
 /*   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 20:27:50 by mcanal            #+#    #+#             */
-/*   Updated: 2016/10/19 22:31:35 by mcanal           ###   ########.fr       */
+/*   Updated: 2016/10/19 22:41:31 by mcanal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int               g_min = MIN_LENGTH;
 int               g_max = MAX_LENGTH;
 enum e_brute_flag g_flag = E_NOFLAG;
 
-void        usage_error()
+void        usage_error(void)
 {
     printf("Usage: %s [OPTIONS] [COMMAND]\n", *g_av);
     printf(" --help: this help message\n");
@@ -43,14 +43,14 @@ void        usage_error()
     exit(EXIT_FAILURE);
 }
 
-static void init_print_buf()
+static void init_print_buf(void)
 {
-    g_print_buf = (char *)malloc((g_max + 1) * sizeof(char));
-    bzero(g_print_buf, g_max + 1);
-    memset(g_print_buf + g_max - g_min, *g_brute_char_list, g_min);
+    g_print_buf = (char *)malloc(((size_t)g_max + 1) * sizeof(char));
+    bzero(g_print_buf, (size_t)g_max + 1);
+    memset(g_print_buf + g_max - g_min, *g_brute_char_list, (size_t)g_min);
 }
 
-static void init_brute_list()
+static void init_brute_list(void)
 {
     const char *brute_char_set[] = {
         DIGITS,
@@ -109,8 +109,8 @@ static void init_exec(int len, char **av)
 {
     char **exec_swap;
 
-    g_exec = (char **)malloc((len + 2) * sizeof(char *));
-    bzero(g_exec, (len + 2) * sizeof(char *));
+    g_exec = (char **)malloc(((size_t)len + 2) * sizeof(char *));
+    bzero(g_exec, ((size_t)len + 2) * sizeof(char *));
     exec_swap = g_exec;
     while (*av)
         *exec_swap++ = *av++;
@@ -132,10 +132,15 @@ static void init(int len, char **av)
 void        parse(int ac, char **av)
 {
     if (!*av)
-        return init(FALSE, av);
-
+    {
+        init(FALSE, av);
+        return;
+    }
     if (**av != '-')
-        return init(ac - (int)(av - g_av), av);
+    {
+        init(ac - (int)(av - g_av), av);
+        return;
+    }
 
     if (!strcmp(*av, "--help"))
         usage_error();
